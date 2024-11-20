@@ -1,0 +1,128 @@
+/* Wrapper */
+.weather-display {
+  padding: 20px;
+  background: linear-gradient(135deg, #abb7c0, #a4d4ff); /* Light mode gradient */
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 20px auto;
+  max-width: 400px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #dcdfe1; /* Adds a subtle border to define edges */
+}
+
+/* Dark Mode Wrapper */
+.dark-mode .weather-display {
+  background: linear-gradient(145deg, #23272a, #1c1f22); /* Dark mode gradient */
+  color: #e4e6eb;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border: 1px solid #333; /* Darker border for dark mode */
+}
+
+/* Title */
+.weather-display h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #000000, #80d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .weather-display h2 {
+  background: linear-gradient(90deg, #80d4ff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Icon Styling */
+.weather-icon {
+  font-size: 5rem;
+  margin: 20px 0;
+  color: #ffc107; /* Light mode icon color */
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  transition: all 0.3s ease;
+}
+
+.dark-mode .weather-icon {
+  color: #ffd966;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+/* Text Styling */
+.weather-display p {
+  font-size: 1.5rem;
+  margin: 15px 0;
+  color: #495057;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .weather-display p {
+  color: #d6d9dc;
+}
+
+/* Loading and Error Messages */
+.current > div {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e63946; /* Light mode error color */
+  transition: all 0.3s ease;
+}
+
+.dark-mode .current > div {
+  color: #ff7d7d; /* Dark mode error color */
+}
+
+/* Loading State */
+.current > div.loading {
+  color: #80d4ff; /* Light blue for loading state */
+}
+
+.dark-mode .current > div.loading {
+  color: #8fd1e8; /* Light blue for dark mode */
+}
+
+/* Hover and Focus Effects */
+.weather-display:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.weather-icon:hover {
+  transform: rotate(10deg) scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .weather-display {
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  .weather-display h2 {
+    font-size: 2rem;
+  }
+
+  .weather-icon {
+    font-size: 4rem;
+  }
+
+  .weather-display p {
+    font-size: 1.25rem;
+  }
+
+  /* Improve the current div responsiveness */
+  .current > div {
+    font-size: 1.2rem;
+  }
+}
+
+.current {
+  background: linear-gradient(135deg, #495057, #1c4b74bb);
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+}

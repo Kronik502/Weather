@@ -1,0 +1,61 @@
+/* Location Input Wrapper */
+.loc {
+  background: linear-gradient(135deg, #495057, #1c4b74bb); /* Light gradient background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+}
+
+/* Dark Mode Location Input */
+.dark-mode .loc {
+  background: linear-gradient(135deg, #343a40, #495057); /* Dark gradient for dark mode */
+  color: #e4e6eb;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Input Field Styling */
+.loc input {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 250px;
+  transition: all 0.3s ease;
+}
+
+.loc input:focus {
+  border-color: #66b3ff; /* Focused border color */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button Styling */
+.loc button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.loc button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Dark Mode Button */
+.dark-mode .loc button {
+  background-color: #495057;
+}
+
+.dark-mode .loc button:hover {
+  background-color: #343a40;
+}
