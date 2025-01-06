@@ -1,0 +1,102 @@
+/* Location Input Wrapper */
+.loc {
+  background: linear-gradient(135deg, var(--primary), var(--secondary)); /* Light gradient background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+  flex-direction: column;
+  position: relative; /* To position suggestions relative to input */
+}
+
+/* Dark Mode Location Input */
+.dark-mode .loc {
+  background: linear-gradient(135deg, #343a40, #495057); /* Dark gradient for dark mode */
+  color: var(--accent);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Input Field Styling */
+.loc input {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 250px;
+  background-color: var(--background);
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.loc input:focus {
+  border-color: var(--accent); /* Focused border color */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button Styling */
+.loc button {
+  padding: 12px 25px;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.loc button:hover {
+  background-color: #34c759; /* Darker green on hover */
+}
+
+/* Dark Mode Button */
+.dark-mode .loc button {
+  background-color: var(--secondary);
+}
+
+.dark-mode .loc button:hover {
+  background-color: #6c5ce7; /* Darker blue for dark mode on hover */
+}
+
+/* Suggestions List Styling */
+.suggestions-list {
+  position: absolute;
+  top: 100%; /* Position suggestions just below the input field */
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: var(--background);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-top: 8px;
+  padding: 5px 0;
+  z-index: 1000; /* Ensure the suggestions are on top */
+}
+
+.suggestions-list li {
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: white;
+}
+
+.suggestions-list li:hover {
+  background-color: #e0e0e0; /* Highlight suggestion on hover */
+}
+
+/* Error Message Styling */
+.error-message {
+  color: #d9534f; /* Red color for errors */
+  font-size: 1rem;
+  margin-top: 10px;
+  text-align: center;
+}

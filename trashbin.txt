@@ -1,0 +1,31 @@
+you
+ 
+ar(--primary)
+ 
+  color: var(--primary);
+ 
+var(--primary)
+ 
+text-align: center;
+  align-self: center;
+ 
+/* General Light/Dark Modes */
+.body{
+
+  background-color: #000000;
+}
+ 
+)
+ 
+linear-gradient(145deg,
+ 
+000000
+ 
+767e86
+ 
+Copy code
+ 
+Copy code
+ 
+Copy code
+ 

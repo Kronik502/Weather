@@ -1,0 +1,123 @@
+/* Global Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+
+/* Light Mode */
+.light-mode {
+  --primary: #f1bd9c;
+  --secondary: #C7B8EA;
+  --background: #333333;
+  --accent: #5d6d5d;
+  background-color: var(--background);
+  color: #333;
+}
+
+
+
+.light-mode .custom-brand {
+  color: var(--primary);
+}
+
+.light-mode .custom-nav-link {
+  color: #fff;
+}
+
+.light-mode .toggle-button {
+  background: var(--accent);
+}
+
+/* Dark Mode */
+.dark-mode {
+  --primary: #1A1D23;
+  --secondary: #07032480;
+  --background: #000000;
+  --accent: #011922;
+  background-color: var(--background);
+  color: #fff;
+}
+
+
+.dark-mode .custom-brand {
+  color: var(--accent);
+}
+
+.dark-mode .custom-nav-link {
+  color: #fff;
+}
+
+.dark-mode .toggle-button {
+  background: var(--accent);
+}
+
+/* Navbar */
+.custom-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(15px);
+  padding: 15px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 0 0 15px 15px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-navbar .custom-brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  flex-grow: 1;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-navbar .custom-nav-link {
+  font-size: 1.1rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.custom-navbar .custom-nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.custom-navbar .toggle-button {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.custom-navbar .toggle-button:hover {
+  background: var(--secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
