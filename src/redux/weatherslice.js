@@ -5,20 +5,21 @@ const API_KEY = '1935857dd015dc0a09a79ccbeaac344d';
 const BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
 // Fetch current weather
+// Fetch current weather
 export const fetchWeather = createAsyncThunk(
   'weather/fetchWeather',
   async (location) => {
     try {
+      const params = typeof location === 'string' ? { q: location } : { lat: location.latitude, lon: location.longitude };
       const response = await axios.get(`${BASE_URL}/weather`, {
         params: {
-          q: location,
+          ...params,
           appid: API_KEY,
           units: 'metric',
         },
       });
       return parseWeatherData(response.data);
     } catch (error) {
-      // Handle and return error
       throw new Error(error.response ? error.response.data.message : error.message);
     }
   }
@@ -29,16 +30,16 @@ export const fetchForecast = createAsyncThunk(
   'weather/fetchForecast',
   async (location) => {
     try {
+      const params = typeof location === 'string' ? { q: location } : { lat: location.latitude, lon: location.longitude };
       const response = await axios.get(`${BASE_URL}/forecast`, {
         params: {
-          q: location,
+          ...params,
           appid: API_KEY,
           units: 'metric',
         },
       });
       return response.data;
     } catch (error) {
-      // Handle and return error
       throw new Error(error.response ? error.response.data.message : error.message);
     }
   }

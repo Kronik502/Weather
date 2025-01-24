@@ -1,185 +1,143 @@
-/* General Light/Dark Modes */
-.light-mode {
-  background-color: #f8f9fa;
-  color: #212529;
+/* Global Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+
+/* Light Mode */
+.light-mode {
+  --primary: #f1bd9c;
+  --secondary: #C7B8EA;
+  background: linear-gradient(80deg, var(--primary), var(--secondary));;
+  --accent: #ffd000;
+  background-color: var(--background);
+  color: #333;
+}
+
+
+
+.light-mode .custom-brand {
+  color: var(--primary);
+}
+
+.light-mode .custom-nav-link {
+  color: #fff;
+}
+
+.light-mode .toggle-button {
+  background: var(--accent);
+}
+
+/* Dark Mode */
 .dark-mode {
-  background-color: #212529;
-  color: #f8f9fa;
+  --primary: #1A1D23;
+  --secondary: #07032480;
+  --background: #000000;
+  --accent: #011922;
+  background-color: var(--background);
+  color: #fff;
+}
+
+
+.dark-mode .custom-brand {
+  color: var(--accent);
+}
+
+.dark-mode .custom-nav-link {
+  color: #fff;
+}
+
+.dark-mode .toggle-button {
+  background: var(--accent);
 }
 
 /* Navbar */
 .custom-navbar {
-  display: flex;
+  display: flex; /* Use 'flex' instead of 'flexbox' */
   justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(145deg, #495057, #1c4b74);
+  align-items: center; /* Corrected from 'align-items: j;' */
   backdrop-filter: blur(15px);
+  padding: 15px 30px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 4px 12px rgba(255, 254, 254, 0.952);
   position: sticky;
   top: 0;
-  padding: 10px 30px;
-  z-index: 1000;
+  z-index: 9000;
   border-radius: 0 0 15px 15px;
-  font-family: 'Roboto', sans-serif; /* Using Roboto for a modern look */
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Dark Mode Navbar */
-.dark-mode .custom-navbar {
-  background: linear-gradient(145deg, rgba(35, 40, 45, 0.9), rgba(15, 20, 25, 0.95));
-}
-
-/* Navbar Brand (Title in the Center) */
-.custom-brand {
-  font-size: 1.3rem;
-
+.custom-navbar .custom-brand {
+  font-size: 1.8rem;
   font-weight: 700;
-  color: #e2e2e2;
+  color: var(--primary);
   text-transform: uppercase;
   letter-spacing: 3px;
   text-align: center;
-  align-self: center;
-  flex-grow: 1; /* Ensures the brand stays in the center */
-  margin: 0;
-  font-family: 'Merriweather', serif; /* Elegant font for the title */
-  transition: color 0.3s ease, transform 0.2s ease;
+  flex-grow: 1; /* Allows the brand to take up available space */
+  transition: color 0.3s ease, transform 0.3s ease;
+  margin-right: auto; /* Moves brand to the left */
 }
 
-.custom-brand:hover {
-  color: #ffd700;
-  transform: scale(1.05);
+.custom-navbar .nav-buttons {
+  display: flex;
+  gap: 100px; /* Adjusts spacing between buttons */
 }
 
-/* Navbar Links */
-.custom-nav-link {
-  font-size: 0.2rem;
-  font-weight: 500;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 30px;
+.custom-navbar .custom-nav-link {
+  font-size: 1.1rem;
+  color: #fff;
+  text-decoration: dashed;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 0 10px;
   transition: all 0.3s ease;
-  margin: 0 15px;
-  font-family: 'Roboto', sans-serif;
 }
 
-.custom-nav-link:hover {
+.custom-navbar .custom-nav-link:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  color: #ffd700;
-  transform: translateY(-2px);
+  color: var(--accent);
+  transform: translateY(-3px);
 }
 
-/* Dark Mode Navbar Links */
-.dark-mode .custom-nav-link {
-  color: #f8f9fa;
-}
-
-.dark-mode .custom-nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #ffd700;
-  transform: translateY(-2px);
-}
-
-/* Toggle Buttons */
-.toggle-button {
+.custom-navbar .toggle-button {
   padding: 12px 25px;
   font-size: 1.1rem;
   border: none;
-  border-radius: 50px;
-  background: linear-gradient(145deg, #3780d3, #000000);
+  border-radius: 8px;
+  background: linear-gradient(1.9deg, var(--primary), var(--secondary));
   color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
-  margin-left: 20px;
+}
+
+.custom-navbar .toggle-button:hover {
+  background: var(--secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.title{
+  color:floralwhite;
+  font-size: 1.4rem;
+  font-weight: 1000;
+
   text-transform: uppercase;
-  font-family: 'Roboto', sans-serif;
-}
-
-.toggle-button:hover {
-  background: linear-gradient(135deg, #000000, #3780d3);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-}
-
-/* Dark Mode Toggle Button */
-.dark-mode .toggle-button {
-  background: linear-gradient(135deg, #6c757d, #495057);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.dark-mode .toggle-button:hover {
-  background: linear-gradient(135deg, #495057, #6c757d);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-}
-
-/* Button Specific to Temperature Unit and Dark Mode Toggle */
-.temperature-unit-button {
-  background: linear-gradient(145deg, #000000, #3780d3);
-}
-
-.temperature-unit-button:hover {
-  background: linear-gradient(145deg, #3780d3, #000000);
-}
-
-.dark-mode .temperature-unit-button {
-  background: linear-gradient(145deg, #3780d3, #000000);
-}
-
-.dark-mode .temperature-unit-button:hover {
-  background: linear-gradient(145deg, #138496, #17a2b8);
-}
-
-.dark-mode .dark-mode-button {
-  background: linear-gradient(145deg, #3780d3, #000000);
-}
-
-.dark-mode .dark-mode-button:hover {
-  background: linear-gradient(145deg, #000000, #3780d3);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .custom-navbar {
-    flex-direction: column;
-    padding: 10px 20px;
-  }
-
-  .custom-brand {
-    font-size: 2rem;
-    margin-bottom: 15px; /* Adds spacing below the title */
-  }
-
-  .toggle-button {
-    margin-left: 10px;
-    margin-bottom: 10px;
-    font-size: 1rem;
-  }
-
-  .custom-nav-link {
-    font-size: 1rem;
-    margin: 5px 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .custom-navbar {
-    padding: 10px;
-  }
-
-  .custom-brand {
-    font-size: 1.8rem;
-  }
-
-  .toggle-button {
-    font-size: 0.9rem;
-    padding: 10px 20px;
-  }
-
-  .custom-nav-link {
-    font-size: 0.9rem;
-    margin: 5px;
-  }
+  letter-spacing: 10px;
+  text-align: left;
+  flex-grow: 30; /* Allows the brand to take up available space */
+  transition: color 0.3s ease, transform 0.3s ease;
+  margin-right: 1000px; /* Moves brand to the left */
 }

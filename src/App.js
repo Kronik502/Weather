@@ -46,20 +46,17 @@ function App() {
                 </Button>
               </div>
 
-              {/* Centered Title */}
-              <Navbar.Brand href="/weather" className="custom-brand">
+            
+              <Navbar.Brand href="/weather" className="title">
                 Weather Kronikles
               </Navbar.Brand>
             </Container>
           </Navbar>
 
           <Routes>
+          
             <Route
               path="/"
-              element={<WeatherDisplay isFahrenheit={isFahrenheit} />}
-            />
-            <Route
-              path="/weather"
               element={
                 <div className="container">
                   <LocationInput />
