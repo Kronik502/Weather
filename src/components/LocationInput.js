@@ -59,23 +59,49 @@ function LocationInput() {
     setSuggestions([]); // Clear suggestions after selection
   };
 
-  // Request the user's current location using Geolocation API
   const handleGetCurrentLocation = () => {
+    console.log('Attempting to get current location...'); // Debugging log
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
+          console.log('Position obtained:', position); // Debugging log
           const { latitude, longitude } = position.coords;
+          console.log('Dispatching fetchWeather with:', { latitude, longitude }); // Debugging log
           dispatch(fetchWeather({ latitude, longitude }));
+          console.log('Dispatching fetchForecast with:', { latitude, longitude }); // Debugging log
           dispatch(fetchForecast({ latitude, longitude }));
         },
         (error) => {
-          setErrorMessage("Unable to retrieve your location. Please allow location access.");
+          console.error('Geolocation error:', error); // Debugging log
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              setErrorMessage("Permission denied. Please allow location access in your browser settings.");
+              break;
+            case error.POSITION_UNAVAILABLE:
+              setErrorMessage("Location information is unavailable. Please try again.");
+              break;
+            case error.TIMEOUT:
+              setErrorMessage("The request to get your location timed out. Please try again.");
+              break;
+            case error.UNKNOWN_ERROR:
+            default:
+              setErrorMessage(`An unknown error occurred: ${error.message}. Please try again.`);
+              break;
+          }
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 5000,
+          maximumAge: 0,
         }
       );
     } else {
+      console.error("Geolocation is not supported by your browser."); // Debugging log
       setErrorMessage("Geolocation is not supported by your browser.");
     }
   };
+
+    
 
   return (
     <div className="loc">
@@ -89,11 +115,12 @@ function LocationInput() {
         <button type="submit">Get Weather</button>
       </form>
       <button onClick={handleGetCurrentLocation}>Use Current Location</button>
+      
 
-      {/* Show error message if location is empty or invalid */}
+     
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      {/* Render suggestions if there are any */}
+     
       {suggestions.length > 0 && (
         <ul className="suggestions-list">
           {suggestions.map((suggestion) => (

@@ -1,3 +1,88 @@
+ var(--primary), var(--secondary);;
+ 
+linear-gradient(1deg
+ 
+background
+ 
+linear-gradient(90deg, var(--primary), var(--secondary));
+ 
+  -webkit-background-clip: text;
+ 
+secondary
+ 
+primary
+ 
+var(--background);
+ 
+var(--background)
+ 
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+ 
+var(--accent)
+ 
+ color: var(--primary);
+ 
+ text-align: center;
+  align-content: center;
+  flex
+ 
+  {/* Centered Title */}
+ 
+Brand
+ 
+ {/* Centered Title */}
+ 
+{/* Centered Title */}
+ 
+<Navbar.Brand href="/weather" className="custom-brand">
+                Weather Kronikles
+              </Navbar.Brand>
+ 
+  <Route
+              path="/"
+              element={<WeatherDisplay isFahrenheit={isFahrenheit} />}
+            />
+ 
+flex
+ 
+none
+ 
+background
+ 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+  const testFetchWithCoordinates = () => {
+    const latitude = -26.2041; // Example latitude for Johannesburg
+    const longitude = 28.0473; // Example longitude for Johannesburg
+    console.log('Testing fetchWeather with:', { latitude, longitude }); // Debugging log
+    dispatch(fetchWeather({ latitude, longitude }));
+    console.log('Testing fetchForecast with:', { latitude, longitude }); // Debugging log
+    dispatch(fetchForecast({ latitude, longitude }));
+  };
+
+ 
+ {/* Render suggestions if there are any */}
+ 
+ {/* Show error message if location is empty or invalid */}
+ 
+<button onClick={testFetchWithCoordinates}>Test Fetch with Coordinates</button>
+ 
+  const testFetchWithCoordinates = () => {
+    const latitude = -26.2041; // Example latitude for Johannesburg
+    const longitude = 28.0473; // Example longitude for Johannesburg
+    console.log('Testing fetchWeather with:', { latitude, longitude }); // Debugging log
+    dispatch(fetchWeather({ latitude, longitude }));
+    console.log('Testing fetchForecast with:', { latitude, longitude }); // Debugging log
+    dispatch(fetchForecast({ latitude, longitude }));
+  };
+  
+  // Add a button to trigger the test
+  
+ 
+ const handleGetCurrentLocation = () => {
+ 
 you
  
 ar(--primary)

@@ -19,8 +19,8 @@ body {
 .light-mode {
   --primary: #f1bd9c;
   --secondary: #C7B8EA;
-  --background: #333333;
-  --accent: #5d6d5d;
+  background: linear-gradient(80deg, var(--primary), var(--secondary));;
+  --accent: #ffd000;
   background-color: var(--background);
   color: #333;
 }
@@ -64,16 +64,17 @@ body {
 
 /* Navbar */
 .custom-navbar {
-  display: flex;
+  display: flex; /* Use 'flex' instead of 'flexbox' */
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* Corrected from 'align-items: j;' */
   backdrop-filter: blur(15px);
   padding: 15px 30px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 4px 12px rgba(255, 254, 254, 0.952);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 9000;
   border-radius: 0 0 15px 15px;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
@@ -85,14 +86,20 @@ body {
   text-transform: uppercase;
   letter-spacing: 3px;
   text-align: center;
-  flex-grow: 1;
+  flex-grow: 1; /* Allows the brand to take up available space */
   transition: color 0.3s ease, transform 0.3s ease;
+  margin-right: auto; /* Moves brand to the left */
+}
+
+.custom-navbar .nav-buttons {
+  display: flex;
+  gap: 100px; /* Adjusts spacing between buttons */
 }
 
 .custom-navbar .custom-nav-link {
   font-size: 1.1rem;
   color: #fff;
-  text-decoration: none;
+  text-decoration: dashed;
   padding: 12px 20px;
   border-radius: 8px;
   margin: 0 10px;
@@ -110,7 +117,7 @@ body {
   font-size: 1.1rem;
   border: none;
   border-radius: 8px;
-  background: var(--accent);
+  background: linear-gradient(1.9deg, var(--primary), var(--secondary));
   color: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
@@ -120,4 +127,17 @@ body {
   background: var(--secondary);
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.title{
+  color:floralwhite;
+  font-size: 1.4rem;
+  font-weight: 1000;
+
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  text-align: left;
+  flex-grow: 30; /* Allows the brand to take up available space */
+  transition: color 0.3s ease, transform 0.3s ease;
+  margin-right: 1000px; /* Moves brand to the left */
 }

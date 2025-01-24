@@ -3,7 +3,7 @@
   background: linear-gradient(135deg, var(--primary), var(--secondary)); /* Light gradient background */
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.397);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,24 +25,24 @@
   padding: 12px;
   font-size: 1rem;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 3px solid #00000086;
   outline: none;
   width: 250px;
-  background-color: var(--background);
-  color: var(--primary);
+  background-color:rgb(255, 255, 254) ;
+  color: black;
   transition: all 0.3s ease;
 }
 
 .loc input:focus {
-  border-color: var(--accent); /* Focused border color */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  border-color: var(--secondary); /* Focused border color */
+
 }
 
 /* Button Styling */
 .loc button {
   padding: 12px 25px;
   background-color: var(--accent);
-  color: white;
+  color: rgb(88, 88, 88);
   border: none;
   border-radius: 5px;
   font-size: 1rem;
@@ -73,7 +73,7 @@
   width: 100%;
   max-height: 200px;
   overflow-y: auto;
-  background-color: var(--background);
+  background-color: rgb(126, 126, 126);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   margin-top: 8px;
@@ -90,7 +90,7 @@
 }
 
 .suggestions-list li:hover {
-  background-color: #e0e0e0; /* Highlight suggestion on hover */
+  background-color: #020202; /* Highlight suggestion on hover */
 }
 
 /* Error Message Styling */
@@ -99,4 +99,32 @@
   font-size: 1rem;
   margin-top: 10px;
   text-align: center;
+}
+/* Button Styling */
+.loc button {
+  padding: 12px 25px;
+  background-color: linear-gradient(90deg, var(--primary), var(--secondary)); /* Updated to a deep purple color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(250, 247, 255, 0.795); /* Subtle glow effect */
+}
+
+.loc button:hover {
+  background-color: #6c5ce7; /* Darker purple for hover effect */
+  box-shadow: 0 6px 12px rgb(255, 255, 255); /* Enhanced glow on hover */
+}
+
+/* Dark Mode Button */
+.dark-mode .loc button {
+  background-color: #333636; /* Teal for dark mode */
+}
+
+.dark-mode .loc button:hover {
+  background-color: #018786; /* Darker teal for hover in dark mode */
 }
